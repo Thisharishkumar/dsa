@@ -1,0 +1,13 @@
+
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if(root == nullptr)
+        return 0;
+        // Find depth of left and right subtree
+        int leftDepth = maxDepth(root->left);
+        int rightDepth = maxDepth(root->right);
+        // Return maxmium depth + current node
+        return 1 + max(leftDepth, rightDepth);
+    }
+};
